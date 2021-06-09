@@ -1,6 +1,14 @@
 import { AppProps } from 'next/app';
-import '@/styles/global.css';
+import GlobalStyle from '../styles/GlobalStyle';
+import Header from '../components/Header';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const app = ({ Component, pageProps }: AppProps) => (
+  <>
+    <Header />
+    <GlobalStyle />
+    <Component {...pageProps} />
+    <div id="root-modal" />
+  </>
+);
+
+export default app;
