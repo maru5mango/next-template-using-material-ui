@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import palette from '../styles/palette';
+import { AuthButton } from '@/styles/componentStyled';
 
 const Container = styled.nav`
   position: sticky;
@@ -27,32 +28,6 @@ const Container = styled.nav`
       color: ${palette.main_pink};
     }
   }
-  .btn-container {
-    .signup-btn {
-      height: 42px;
-      margin-right: 8px;
-      padding: 0 1.2rem;
-      border: 0;
-      border-radius: 20px;
-      background-color: white;
-      cursor: pointer;
-      &:hover {
-        background-color: ${palette.gray_f7};
-      }
-    }
-    .login-btn {
-      height: 42px;
-      padding: 0 1.2rem;
-      border: 0;
-      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
-      border-radius: 20px;
-      cursor: pointer;
-      outline: none;
-      &:hover {
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
-      }
-    }
-  }
 `;
 
 const Header: React.FC = () => (
@@ -63,12 +38,12 @@ const Header: React.FC = () => (
       </a>
     </Link>
     <div className="btn-container">
-      <button type="button" className="signup-btn">
+      <AuthButton>
         회원가입
-      </button>
-      <button type="button" className="login-btn">
+      </AuthButton>
+      <AuthButton>
         로그인
-      </button>
+      </AuthButton>
     </div>
   </Container>
 );
